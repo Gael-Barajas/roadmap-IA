@@ -4,7 +4,7 @@ matriz = np.array([[1,2,3],[4,5,6],[7,8,9]])
 fila = np.array([10,20,30])
 print(matriz + fila)
 #ESTADISTICA
-datos = np.array([23, 45, 12, 67, 34, 89, 56, 78, 90, 11])
+datos = np.array([23, 45, 12, 67, 34, 89, 56, 78, 90, 11, 17])
 
 print(np.mean(datos))    # promedio
 print(np.median(datos))  # mediana
