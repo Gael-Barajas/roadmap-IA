@@ -27,3 +27,15 @@ print(df.loc[2])
 print("--------------------------------------------------------------------")
 print(df.info())
 print(df.describe())
+#EJERCICIO
+print("--------------------------------------------------------------------")
+peliculas = {
+    'titulo': ["Batman", "AVATAR 3", "El pianista", "Toy Story 5", "Spiderman"],
+    'año': [2009, 2025, 2006, 2026, 2021],
+    'duracion_min': [146 , 195 , 131, 119, 150],
+    'calificacion': [9.5, 7.0, 9.9, 7.9, 8.5]
+}
+df_peliculas = pd.DataFrame(peliculas)
+print(df_peliculas[df_peliculas['calificacion'] > 8])
+print(f"Promedio de duracion: {df_peliculas['duracion_min'].mean()}")
+print(df_peliculas['calificacion'].argmax())
