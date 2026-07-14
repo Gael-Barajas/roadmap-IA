@@ -41,3 +41,18 @@ print(df_ordenado)
 print("___________________________________________________")
 df_norte = df_ventas[df_ventas['region'] == 'Norte']
 print(df_norte)
+print("---------------------------------------------------")
+#EJERCICIO
+data_estudiantes = {
+    'nombre' : ['Gael', 'Natalia', 'Santiago', 'Adrian', 'Sofia', 'Nicolas'],
+    'materia' : ['Quimica', 'Fisica', 'matematicas' , 'Fisica', 'matematicas', 'sociales'],
+    'calificacion' : [None, 97, 85, None, 45, 80]
+}
+df_estudiantes = pd.DataFrame(data_estudiantes)
+df_estudiantes_rellenada = df_estudiantes.fillna({'calificacion' : df_estudiantes['calificacion'].mean()})
+print(df_estudiantes_rellenada)
+print("___________________________________________________")
+print(df_estudiantes_rellenada.groupby('materia')['calificacion'].mean())
+print("___________________________________________________")
+df_calificaciones_altas = df_estudiantes_rellenada[df_estudiantes_rellenada['calificacion'] > 80.0]
+print(df_calificaciones_altas)
