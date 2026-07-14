@@ -22,7 +22,7 @@ print("--------------------------------------------------------------------")
 print(df['nombre'])           # columna por nombre
 print(df[['nombre', 'edad']]) # varias columnas
 print(df.iloc[1])             # fila por índice
-print(df.loc[2])
+print(df.loc[2])              # fila por etiquta (en este caso la etiqueta coincide con los índices)
 #INFO DE DATASETS
 print("--------------------------------------------------------------------")
 print(df.info())
