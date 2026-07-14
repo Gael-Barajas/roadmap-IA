@@ -1,0 +1,15 @@
+import pandas as pd
+URL = 'https://raw.githubusercontent.com/datasciencedojo/datasets/master/titanic.csv'
+df = pd.read_csv(URL)
+print(df.shape)
+#print(df.head())
+#print(df.columns.tolist())
+#print(df.shape)
+#print(df.isnull().sum())
+df = df.drop(columns=['Cabin'])
+df['Age'] = df['Age'].fillna(df['Age'].mean())
+df['Embarked'] = df['Embarked'].fillna({'Embarked' : df['Embarked'].value_counts().index[0]})
+print(df)
+print(df.groupby('Survived')['Survived'].count())
+print("Promedio por clase:")
+print(f"{df.groupby('Pclass')['Age'].mean()}")
