@@ -28,7 +28,7 @@ data_ventas = {
 }
 
 df_ventas = pd.DataFrame(data_ventas)
-#print(df_ventas)
+print(df_ventas)
 print(df_ventas.groupby('vendedor')['ventas'].sum())
 print("___________________________________________________")
 print(df_ventas.groupby('vendedor')['ventas'].mean())

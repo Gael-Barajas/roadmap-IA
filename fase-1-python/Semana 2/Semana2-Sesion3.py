@@ -1,19 +1,17 @@
 import pandas as pd
 #SERIES
-serie = pd.Series([10, 20, 30, 40, 50],
-                  index=['a', 'b', 'c', 'd', 'e'])
-
+serie = pd.Series([10,20,30,40,50], index = ['a','b','c','d','d'])
 print(serie)
 print(serie['c'])
 #DATAFRAME
 print("--------------------------------------------------------------------")
 data = {
-    'nombre': ['Ana', 'Luis', 'María', 'Carlos'],
-    'edad': [23, 35, 28, 41],
-    'salario': [15000, 32000, 27000, 45000]
+    'nombre': ['Ana', 'Luis', 'Maria', 'Carlos'],
+    'edad': [23,35,28,41],
+    'salario': [15000,32000,27000,45000]
 }
 
-df = pd.DataFrame(data)
+df = pd.DataFrame(data, index = ['a','b','c','d'])
 print(df)
 print(df.shape)
 print(df.dtypes)
@@ -22,7 +20,7 @@ print("--------------------------------------------------------------------")
 print(df['nombre'])           # columna por nombre
 print(df[['nombre', 'edad']]) # varias columnas
 print(df.iloc[1])             # fila por índice
-print(df.loc[2])              # fila por etiquta (en este caso la etiqueta coincide con los índices)
+print(df.loc['c'])              # fila por etiquta (en este caso la etiqueta coincide con los índices)
 #INFO DE DATASETS
 print("--------------------------------------------------------------------")
 print(df.info())
@@ -30,12 +28,12 @@ print(df.describe())
 #EJERCICIO
 print("--------------------------------------------------------------------")
 peliculas = {
-    'titulo': ["Batman", "AVATAR 3", "El pianista", "Toy Story 5", "Spiderman"],
-    'año': [2009, 2025, 2006, 2026, 2021],
-    'duracion_min': [146 , 195 , 131, 119, 150],
-    'calificacion': [9.5, 7.0, 9.9, 7.9, 8.5]
+    'titulo': ['Batman', 'Los croods', 'Increibles 2', 'Openhaimmer', 'La odisea'],
+    'año': [2013, 2009, 2021, 2024, 2026],
+    'duracion_min':[154, 131, 120, 185, 200],
+    'calificacion':[91, 85, 80, 99, 100]
 }
 df_peliculas = pd.DataFrame(peliculas)
-print(df_peliculas[df_peliculas['calificacion'] > 8])
-print(f"Promedio de duracion: {df_peliculas['duracion_min'].mean()}")
+print(df_peliculas[df_peliculas['calificacion'] > 90])
+print(f"Duracion promedio: {df_peliculas['duracion_min'].mean()}")
 print(df_peliculas['calificacion'].argmax())
